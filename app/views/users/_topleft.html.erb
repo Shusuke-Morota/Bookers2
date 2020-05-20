@@ -1,14 +1,12 @@
 
 
-<div class = "left-box">
-	<h2>User info</h2>
-
-	<%= attachment_image_tag user, :profile_image_id, :fill, 20, 20, fallback: "no_image.jpg"%>
-	<div class = "bar">
-			<a>name</a>
-			<%= user.name %>
-	</div>
-	<a>introduction</a>
-	<%= user.introduction %>
-	<%= link_to "#", edit_user_path(user.id) %>
-</div>
+<h1>User info</h1>
+	 <%= attachment_image_tag @user, :profile_image, :fill, 60, 60, format: 'jpeg',
+	 	class: "img-circle pull-left profile-img", fallback: "no_image.jpg" %>
+	<p>name</p>
+	<p><%= user.name %></p>
+	<p>intriduction</p>
+	<p><%= user.introduction %></p>
+	<% if user.id == current_user.id %>
+    <p><%= link_to "編集", edit_user_path(user), class: "pull-right" %></p>
+    <% end %>

@@ -11,12 +11,14 @@
 
 	<div class="form-group has-icon">
     	<div class="user-edit-image">
-        	<%= attachment_image_tag @user, :profile_image, :fill, 60, 60,
+        	<%= attachment_image_tag @user, :profile_image, size: "100x100",
         	class: "img-circle pull-left profile-thumb", fallback: "no_image.jpg"%>
     	</div>
+
     	<label class="control-label sr-only" for="inputEmail">ProfileImage</label>
     	<%= f.attachment_field :profile_image, placeholder: "プロフィール画像", class: "user-edit-form" %>
 	</div>
+
 
 	<p>Introduction</p>
 	<%= f.text_area :introduction %>

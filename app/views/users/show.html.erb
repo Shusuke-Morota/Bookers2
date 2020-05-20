@@ -1,5 +1,8 @@
 <!-- マイページ -->
 
+<%= render 'users/topleft',user:@user %>
+<%= render 'books/bottomleft',book:@book %>
+
 <h1>Books</h1>
 
 <table>
@@ -11,7 +14,7 @@
 	</thead>
 
 	<tbody>
-		<%= @user.posts.each do |post| %>
+		<% @user.posts.each do |post| %>
 		<tr>
 			<td><%= post.title %></td>
 			<td><%= post.body %></td>
@@ -20,5 +23,3 @@
 	</tbody>
 </table>
 
-<%= render 'users/topleft',user:@user %>
-<%= render 'books/bottomleft',book:@book %>
