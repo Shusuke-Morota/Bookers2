@@ -4,13 +4,14 @@
 <!-- 本編集 -->
 
 <h1>Editing Book</h1>
-<a>Title</a>
+	<a>Title</a>
+<%= form_for(@book) do |f| %>
+	<%= f.text_field :title %>
 
-<%= f.text_field :title %>
-
-<h4>Opinion</h4>
-<%= f.text_field :body %>
-<%= f.submit "Update Book" %>
+	<h4>Opinion</h4>
+	<%= f.text_field :body %>
+	<%= f.submit "Update Book" %>
+<% end %>
 
 <%= link_to "show", book_path %>
 <%= link_to "back", books_path %>
