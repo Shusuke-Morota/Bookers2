@@ -2,6 +2,8 @@ class UsersController < ApplicationController
 
 	def index
 		@users = User.all
+		@user = current_user #ログイン後の自分自身
+		@book = Book.new
 	end
 
 	def show

@@ -1,3 +1,10 @@
+<!-- 部分テンプレート -->
+
+<%= render 'users/topleft',user:@book.user %>
+<%= render 'books/bottomleft',book:@book %>
+
+
+
 <h1>Book detail</h1>
 
 <table>
@@ -12,11 +19,9 @@
 		<tr>
 			<td><%= @book.title %></td>
 			<td><%= @book.body %></td>
+			<td><%= link_to "edit", edit_book_path %></td>
+			<td><%= attachment_image_tag @user, :profile_image, :fill, 20,20, fallback: "no_image.jpg" %></td>
+			<td><%= link_to "destroy", book_path, method: :delete %></td>
 		</tr>
 	</tbody>
 </table>
-
-<!-- 部分テンプレート -->
-
-<%= render 'users/topleft',user:@book.user %>
-<%= render 'books/bottomleft',book:@book %>

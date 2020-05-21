@@ -5,8 +5,10 @@
 	 	class: "img-circle pull-left profile-img", fallback: "no_image.jpg" %>
 	<p>name</p>
 	<p><%= user.name %></p>
+
 	<p>intriduction</p>
 	<p><%= user.introduction %></p>
+	
 	<% if user.id == current_user.id %>
     <p><%= link_to "編集", edit_user_path(user), class: "pull-right" %></p>
     <% end %>
