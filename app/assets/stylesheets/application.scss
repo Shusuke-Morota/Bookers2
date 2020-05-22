@@ -1,0 +1,84 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+  @import "bootstrap-sprockets";
+  @import "bootstrap";
+
+
+/* トップ画面 */
+
+
+body {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    line-height: 1.42857143;
+    color: #333333;
+    background-color: #fff;
+}
+
+header {
+	color: white;
+
+}
+
+.body {
+	margin-top: 51px;
+}
+
+.container {
+    margin-right: auto;
+    margin-left: auto;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.navbar-left {
+	font-size: 20px;
+	padding: 10px 0 0;
+}
+
+.navbar-right a {
+	color: white;
+	float: left;
+}
+
+.top-message {
+	position: relative;
+    min-height: 1px;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.h1 {
+	margin-top: 20px;
+	margin-bottom: 10px;
+	font-size: 36px;
+}
+
+.row-1 {
+	padding-top: 40px;
+}
+
+
+/* ログイン画面↓ */
+
+.col-xs-offset-9 {
+	margin-left: 75%;
+}
+
+.col-xs-3 {
+	width: 25%;
+}

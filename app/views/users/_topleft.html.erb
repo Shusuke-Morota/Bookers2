@@ -1,14 +1,38 @@
 
 
-<h1>User info</h1>
-	 <%= attachment_image_tag @user, :profile_image, :fill, 60, 60, format: 'jpeg',
-	 	class: "img-circle pull-left profile-img", fallback: "no_image.jpg" %>
-	<p>name</p>
-	<p><%= user.name %></p>
+<div class="container">
 
-	<p>intriduction</p>
-	<p><%= user.introduction %></p>
-	
-	<% if user.id == current_user.id %>
-    <p><%= link_to "編集", edit_user_path(user), class: "pull-right" %></p>
-    <% end %>
+   <div class="row">
+
+   	<div class="col-xs-3">
+   		<h2>User info</h2>
+	     <%= attachment_image_tag @user, :profile_image, :fill, 60, 60, format: 'jpeg',
+	 	   class: "img-circle pull-left profile-img", fallback: "no_image.jpg" %>
+	 	   <table>
+	 	   	<tbody>
+	 	   		<tr></tr>
+	 	   		<tr>
+	 	   		   <th>name</th>
+	               <th><%= user.name %></th>
+	            </tr>
+
+	            <tr>
+	            	<th>intriduction</th>
+	            	<th><%= user.introduction %></th>
+	            	<th></th>
+	            </tr>
+	        </tbody>
+	       </table>
+
+	       <div class="row">
+              <% if user.id == current_user.id %>
+
+              <p><%= link_to "", edit_user_path(user), class: "col-xs-12 btn btn-default glyphicon glyphicon-wrench
+              edit_user" %></p>
+              <% end %>
+   		   </div>
+   	</div>
+   </div>
+</div>
+
+

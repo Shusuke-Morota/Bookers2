@@ -45,10 +45,16 @@ class BooksController < ApplicationController
 		@book = Book.find(params[:id])
 		@book.destroy
 		redirect_to books_path
+		if book.update(book_params)
+		   redirect_to books_path(book.id), notice: "You have created book successfully."
+        else
+           flash.now[:notice] = "error"
+           render :index
+        end
 	end
 
 	private
 	def user_params
-		params.require(:book).permit(:title, :body)
+		params.require(:book).permit(:title, :body, :user_id)
 	end
 end

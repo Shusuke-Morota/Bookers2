@@ -1,3 +1,6 @@
+<!-- ヘッダー -->
+
+
 <!DOCTYPE html>
 <html>
   <head>
@@ -11,47 +14,78 @@
 
   <body>
 
-    <div>
-      <ul class="">
-        <% if user_signed_in? %>
+    <header class="navbar navbar-fixed-top navbar-inverse">
 
-          <li class="">
-            <%= link_to 'Home', user_path(current_user.id) %>
-          </li>
-          <li class="">
-            <%= link_to 'Users', users_path %>
-          </li>
-          <li class="">
-            <%= link_to 'Books', books_path %>
-          </li>
-          <li class="">
-            <%= link_to 'logout', destroy_user_session_path, method: :delete %>
-          </li>
+        <div class="container">
+           <nav class="nav navbar-nav navbar-left">
+            <span>Bookers</span>
+           </nav>
 
-        <% else %>
+              <nav>
+                <ul class="nav navbar-nav navbar-right">
+                   <% if user_signed_in? %>
 
-          <li class="">
-            <%= link_to "Home", root_path %>
-          </li>
-          <li class="">
-            <%= link_to "About", about_path %>
-          </li>
-          <li class="">
-            <%= link_to "sign up", new_user_password_path %>
-          </li>
-          <li class="">
-            <%= link_to "login", new_user_session_path %>
-          </li>
+                    <li>
+                      <a class="glyphicon glyphicon-home home" href="/users"></a>
+                      <%= link_to 'Home', user_path(current_user.id) %>
+                    </li>
 
-        <% end %>
-     </ul>
-    </div>
+                    <li>
+                      <a class="glyphicon glyphicon-user users" href="/users"></a>
+                      <%= link_to 'Users', users_path %>
+                    </li>
+
+                    <li>
+                      <a class="glyphicon glyphicon-book books" href="/books"></a>
+                      <%= link_to 'Books', books_path %>
+                    </li>
+
+                    <li>
+                      <a class="glyphicon glyphicon-log-out logout" rel="nofollow" data-method="delete" href="/users/sign out"></a>
+                      <%= link_to 'logout', destroy_user_session_path, method: :delete %>
+                    </li>
+
+                    <% else %>
+
+                    <li>
+                      <a class="glyphicon glyphicon-home home" href="/home"></a>
+                      <%= link_to "Home", root_path %>
+                    </li>
+
+                    <li>
+                      <a class="glyphicon glyphicon-link about" href="/home/about"></a>
+                      <%= link_to "About", about_path %>
+                    </li>
+
+                    <li>
+                      <a class="glyphicon glyphicon-edit sign_up" href="/users/sign_up"></a>
+                      <%= link_to "sign up", new_user_password_path %>
+                    </li>
+
+                    <li class="">
+                      <a class="glyphicon glyphicon-log-in sign_in" href="/users/sign_in"></a>
+                      <%= link_to "login", new_user_session_path %>
+                    </li>
+
+
+                    <% end %>
+
+                </ul>
+              </nav>
+
+        </div>
+
+    </header>
+
+    <% if flash[:notice] %>
+      <div class="flash">
+        <%= flash[:notice] %>
+      </div>
+    <% end %>
 
     <%= yield %>
 
-    <footer>
-      <a>CopyRight Infratop.inc</a>
-    </footer>
+    
   </body>
 
 </html>
