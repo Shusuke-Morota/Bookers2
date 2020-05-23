@@ -1,27 +1,39 @@
 <!-- 部分テンプレート -->
+<div class="body">
+  <div class="container">
+	<div class="row">
+		<div class="col-xs-3">
+			<%= render 'users/topleft', user: @book.user %>
+	        <%= render 'books/bottomleft', book: @new_book %>
+		</div>
 
-<%= render 'users/topleft', user: @book.user %>
-<%= render 'books/bottomleft', book: @new_book %>
+		  <div class="col-xs-9">
+	            <p id="notice"></p>
+				<h1>Book detail</h1>
 
+				<table>
+					<thead>
+						<tr>
+							<th></th>
+						</tr>
+					</thead>
+						<tbody>
+							<tr>
+								<%= attachment_image_tag @user, :profile_image, :fill, 60,60, format: 'jpeg', class: "img-circle pull-left profile-img", fallback: "no_image.jpg" %>
+								<td><%= @book.user.name %></td>
+								<td><%= @book.title %></td>
+								<td><%= @book.body %></td>
+								<% if @book.user.id == current_user.id %>
 
+								<td><%= link_to "Edit",edit_book_path(@book),class: "btn-sm btn-success" %></td>
+								<td><%= link_to "Destroy",book_path(@book),  method: :delete, data:{ confirm:"Are you sure?"},class: "btn-sm btn-danger" %></td>
 
-<h1>Book detail</h1>
+								<% end %>
+							</tr>
+						</tbody>
+				</table>
 
-<table>
-	<thead>
-		<tr>
-			<th>Title</th>
-			<th>Opinion</th>
-		</tr>
-	</thead>
-
-	<tbody>
-		<tr>
-			<td><%= @book.title %></td>
-			<td><%= @book.body %></td>
-			<td><%= link_to "edit", edit_book_path %></td>
-			<td><%= attachment_image_tag @user, :profile_image, :fill, 20,20, fallback: "no_image.jpg" %></td>
-			<td><%= link_to "destroy", book_path, method: :delete %></td>
-		</tr>
-	</tbody>
-</table>
+		  </div>
+	</div>
+  </div>
+</div>

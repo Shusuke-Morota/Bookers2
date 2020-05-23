@@ -3,6 +3,10 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 
+.h2 {
+	font-size: 30px;
+}
+
 .container {
 	width: 750px;
 }
@@ -15,7 +19,7 @@
 	width:  25%;
 }
 
-col-xs-9 {
+.col-xs-9 {
 	width: 75%;
 	float: left;
 }
