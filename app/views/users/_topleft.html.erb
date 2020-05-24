@@ -1,9 +1,7 @@
 
 
 
-<div class="container">
-   <div class="row">
-   	<div class="col-xs-3">
+
    		<h2>User info</h2>
 	     <%= attachment_image_tag user, :profile_image, :fill, 60, 60, format: 'jpeg',
 	 	   class: "img-circle pull-left profile-img", fallback: "no_image.jpg" %>
@@ -16,9 +14,8 @@
 	            </tr>
 
 	            <tr>
-	            	<th>intriduction</th>
-	            	<th><%= user.introduction %></th>
-	            	<th></th>
+	            	<td>introduction</td>
+	            	<td><%= user.introduction %></td>
 	            </tr>
 	        </tbody>
 	       </table>
@@ -29,7 +26,3 @@
               edit_user" %></p>
 
    		   </div>
-   	</div>
-   </div>
-</div>
-

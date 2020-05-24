@@ -1,24 +1,21 @@
 
 
-
-<div class="container">
-   <div class="row">
-   	<div class="col-xs-3">
       <h2>New book</h2>
 
       <%= form_for(book) do |f| %>
+      <div class="field row">
         <p>Title</p>
       <%= f.text_field :title,class: "col-xs-12" %>
+      </div>
+
+      <div class="field row">
         <p>Opinion</p>
       <%= f.text_area :body,class: "col-xs-12" %>
+      </div>
 
-         <div class="row">
+         <div class="actions row">
 
 	        <input type="submit" name="commit" value="Create Book" class="btn btn-primary col-xs-12" data-disable-with="Create Book">
          </div>
 
          <% end %>
-    </div>
-   </div>
-
-</div>
